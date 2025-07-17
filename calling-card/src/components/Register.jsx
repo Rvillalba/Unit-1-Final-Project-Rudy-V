@@ -1,5 +1,5 @@
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-
 const Register = () => {
     const { register }=useParams();
     return (
@@ -9,7 +9,9 @@ const Register = () => {
                 <input id="lname" type="text" name="lname" placeholder="Last Name" /><br/>
                 <input id="email" type="text" name="email" placeholder="E-Mail"/><br/>
                 <input id="password" type="password" name="password" placeholder="Password"/><br/>
-                <button type="button">Register Account</button>
+                <Link to="/create">
+                    <button type="button">Register Account</button>
+                </Link>
             </form>
         </div>
     )
