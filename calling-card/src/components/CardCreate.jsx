@@ -1,7 +1,10 @@
+import { toPng } from 'html-to-image'
+import { useRef } from "react";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 
 const CardCreate = () => {
+    const elementRef = useRef(null);
     const { create }=useParams();
     const [formData, setFormData] = useState({
         name:"",
@@ -18,7 +21,20 @@ const CardCreate = () => {
             [name]: value,
         }));
     };
+    const htmlToImageConvert = () => {
+    toPng(elementRef.current, { cacheBust: false })
+      .then((dataUrl) => {
+        const link = document.createElement("a");
+        link.download = "my-image-name.png";
+        link.href = dataUrl;
+        link.click();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
     return(
+        
         <div>
             <div class="create-form">
                 <h1>Card Fields</h1>            
@@ -31,6 +47,7 @@ const CardCreate = () => {
                     </form>
             </div>
             <div className="business-card"
+                ref={elementRef}
                 style={{
                     width: "350px",
                     height: "auto",
@@ -48,8 +65,10 @@ const CardCreate = () => {
                 <p>{formData.phone}</p>
                 <p>{formData.email}</p>
                 <p>{formData.address1}</p>
-                <p>{formData.address2}</p>
+                <p>{formData.address2}</p><br/>
+                
             </div>
+            <button onClick={htmlToImageConvert}>Download Card</button>
         </div>
     )
 }
