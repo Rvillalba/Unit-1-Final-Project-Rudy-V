@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Login from './components/Login';
+import Landing from './components/Landing';
 import CardCreate from './components/CardCreate';
 import Saved from './components/SavedCards';
 import Preview from './components/Preview';
@@ -11,7 +11,7 @@ function App() {
         <div>
             <Router>
                 <Routes>
-                        <Route path="/" element={<Login />} />
+                        <Route path="/" element={<Landing />} />
                         <Route path="/create" element={<CardCreate />} />
                         <Route path="/saved" element={<Saved />} />
                         <Route path="/preview" element={<Preview />} />
