@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import './card.css'
 
 const CardCreate = () => {
     const { create }=useParams();
@@ -30,12 +29,22 @@ const CardCreate = () => {
                         <input id="email" type="text" name="email" value={formData.email} onChange={handleChange} placeholder="E-Mail" /> <br/>
                         <input id="address1" type="text" name="address1" value={formData.address1} onChange={handleChange} placeholder="Address Line 1" /> <br/>
                         <input id="address2" type="text" name="address2" value={formData.address2} onChange={handleChange} placeholder="Address Line 2" /> <br/>
-                    <Link to="/preview">
-                        <button type="button">View</button>
-                    </Link>
                     </form>
             </div>
-            <div className="business-card">
+            <div className="business-card"
+                style={{
+                    width: "350px",
+                    height: "auto",
+                    backgroundColor: "#fff",
+                    padding: "30px",
+                    boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.2)",
+                    borderRadius: "10px",
+                    margin: "40px auto",
+                    fontFamily: "Arial, Helvetica, sans-serif",
+                    textAlign: "left",
+                    marginBottom: "20px",
+                    color: "#333",
+                }}>
                 <p>{formData.name}</p>
                 <p>{formData.phone}</p>
                 <p>{formData.email}</p>
