@@ -16,11 +16,19 @@ const CardCreate = () => {
     });
     const handleChange = (e) => {
         const { name, value} = e.target;
-        console.log(`Updating ${name}:`, value);
         setFormData((prevData) => ({
             ...prevData,
             [name]: value,
         }));
+    };
+    const clearInput = () => {
+        setFormData({
+        name:"",
+        phone:"",
+        email:"",
+        address1:"",
+        address2:"",
+        });
     };
     const htmlToImageConvert = () => {
     toPng(elementRef.current, { cacheBust: false })
@@ -45,7 +53,9 @@ const CardCreate = () => {
                         <input id="email" type="text" name="email" value={formData.email} onChange={handleChange} placeholder="E-Mail" /> <br/>
                         <input id="address1" type="text" name="address1" value={formData.address1} onChange={handleChange} placeholder="Address Line 1" /> <br/>
                         <input id="address2" type="text" name="address2" value={formData.address2} onChange={handleChange} placeholder="Address Line 2" /> <br/>
+                    <button type="button" onClick={clearInput}>Clear All Fields</button>
                     </form>
+                    
             </div>
             <div className="business-card"
                 ref={elementRef}
