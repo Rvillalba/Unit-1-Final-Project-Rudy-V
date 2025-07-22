@@ -2,6 +2,7 @@ import { toPng } from 'html-to-image'
 import { useRef } from "react";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
+import backgroundImage from '../bg-image.jpg'
 
 const CardCreate = () => {
     const elementRef = useRef(null);
@@ -49,6 +50,7 @@ const CardCreate = () => {
             <div className="business-card"
                 ref={elementRef}
                 style={{
+                    backgroundImage: `url(${backgroundImage})`,
                     width: "350px",
                     height: "auto",
                     backgroundColor: "#fff",
