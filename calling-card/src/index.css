@@ -1,13 +1,4 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(5, 5, 5, 0.87);
-
-}
-.create-btn {
+#btn {
   width: 100px;
   height: 40px;
   background-color: #000000;
@@ -15,10 +6,13 @@
   float: center;
   padding: 5px;
   border-radius: 10px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
 }
-.create-title {
+#nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#create-title {
   margin-top: 500 px;
-  color:#000000
+  color:#000000;
 }

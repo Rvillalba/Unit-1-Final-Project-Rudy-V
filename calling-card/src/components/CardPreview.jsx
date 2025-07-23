@@ -16,6 +16,7 @@ const CardPreview = ({ data }) => {
         link.click();
       });
      };
+
     return(
       <div>
         <div 
@@ -39,7 +40,7 @@ const CardPreview = ({ data }) => {
             <p>{data.address1}</p>
             <p>{data.address2}</p><br/>
         </div>
-            <Button label="Download Card" onClick={htmlToCanvas} />
+            <Button id="btn" label="Download Card" onClick={htmlToCanvas} />
         </div>
     )
 }
