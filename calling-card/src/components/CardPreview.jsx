@@ -4,7 +4,21 @@ import { useParams } from "react-router-dom";
 import backgroundImage from '../images/bg-image.jpg'
 
 
-const CardPreview = (props) => {
+const CardPreview = ({ data }) => {
+    const { preview }=useParams();
+    const elementRef = useRef(null);
+    const htmlToImageConvert = () => {
+    toPng(elementRef.current, { cacheBust: false })
+      .then((dataUrl) => {
+        const link = document.createElement("a");
+        link.download = "my-image-name.png";
+        link.href = dataUrl;
+        link.click();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
     return(
         <div>
 
@@ -24,11 +38,11 @@ const CardPreview = (props) => {
                     marginBottom: "20px",
                     color: "#333",
                 }}>
-                <p>{props.name}</p>
-                <p>{props.phone}</p>
-                <p>{props.email}</p>
-                <p>{props.address1}</p>
-                <p>{props.address2}</p><br/>
+                <p>{data.name}</p>
+                <p>{data.phone}</p>
+                <p>{data.email}</p>
+                <p>{data.address1}</p>
+                <p>{data.address2}</p><br/>
                 
             </div>
             <button onClick={htmlToImageConvert}>Download Card</button>

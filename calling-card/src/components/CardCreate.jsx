@@ -5,7 +5,6 @@ import { useState } from "react";
 import CardPreview from './CardPreview';
 
 const CardCreate = () => {
-    const elementRef = useRef(null);
     const { create }=useParams();
     const [formData, setFormData] = useState({
         name:"",
@@ -30,18 +29,7 @@ const CardCreate = () => {
         address2:"",
         });
     };
-    const htmlToImageConvert = () => {
-    toPng(elementRef.current, { cacheBust: false })
-      .then((dataUrl) => {
-        const link = document.createElement("a");
-        link.download = "my-image-name.png";
-        link.href = dataUrl;
-        link.click();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+    
     return(
         
         <div>
@@ -58,9 +46,8 @@ const CardCreate = () => {
                     
             </div>
             <div>
-                {<CardPreview />}
+                <CardPreview data={formData}/>
             </div>
-            <button onClick={htmlToImageConvert}>Download Card</button>
         </div>
     )
 }
