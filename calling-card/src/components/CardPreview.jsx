@@ -12,7 +12,7 @@ const CardPreview = ({ data }) => {
     toPng(elementRef.current, { cacheBust: false })
       .then((dataUrl) => {
         const link = document.createElement("a");
-        link.download = "calling-card.jpeg";
+        link.download = "calling-card.png";
         link.href = dataUrl;
         link.click();
       })
@@ -27,7 +27,7 @@ const CardPreview = ({ data }) => {
                 ref={elementRef}
                 style={{
                     backgroundImage: `url(${backgroundImage})`,
-                    width: "300px",
+                    width: "325px",
                     height: "auto",
                     backgroundColor: "#fff",
                     padding: "30px",
