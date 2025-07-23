@@ -1,6 +1,7 @@
 import { toPng } from 'html-to-image'
 import { useRef } from "react";
 import { useParams } from "react-router-dom";
+import Button from './Button';
 import backgroundImage from '../images/bg-image.jpg'
 
 
@@ -11,7 +12,7 @@ const CardPreview = ({ data }) => {
     toPng(elementRef.current, { cacheBust: false })
       .then((dataUrl) => {
         const link = document.createElement("a");
-        link.download = "my-image-name.png";
+        link.download = "calling-card.jpeg";
         link.href = dataUrl;
         link.click();
       })
@@ -26,7 +27,7 @@ const CardPreview = ({ data }) => {
                 ref={elementRef}
                 style={{
                     backgroundImage: `url(${backgroundImage})`,
-                    width: "350px",
+                    width: "300px",
                     height: "auto",
                     backgroundColor: "#fff",
                     padding: "30px",
@@ -45,7 +46,7 @@ const CardPreview = ({ data }) => {
                 <p>{data.address2}</p><br/>
                 
             </div>
-            <button onClick={htmlToImageConvert}>Download Card</button>
+            <Button label="Download Card" onClick={htmlToImageConvert} />
         </div>
     )
 }
