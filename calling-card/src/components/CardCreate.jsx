@@ -2,7 +2,7 @@ import { toPng } from 'html-to-image'
 import { useRef } from "react";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import backgroundImage from '../bg-image.jpg'
+import CardPreview from './CardPreview';
 
 const CardCreate = () => {
     const elementRef = useRef(null);
@@ -46,7 +46,7 @@ const CardCreate = () => {
         
         <div>
             <div class="create-form">
-                <h1>Card Fields</h1>            
+                <h1 className="create-title">Enter Information Below</h1>            
                     <form>
                         <input id="name" type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Name" /> <br/>
                         <input id="phone" type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone Number" /> <br/>
@@ -57,28 +57,8 @@ const CardCreate = () => {
                     </form>
                     
             </div>
-            <div className="business-card"
-                ref={elementRef}
-                style={{
-                    backgroundImage: `url(${backgroundImage})`,
-                    width: "350px",
-                    height: "auto",
-                    backgroundColor: "#fff",
-                    padding: "30px",
-                    boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.2)",
-                    borderRadius: "10px",
-                    margin: "40px auto",
-                    fontFamily: "Arial, Helvetica, sans-serif",
-                    textAlign: "left",
-                    marginBottom: "20px",
-                    color: "#333",
-                }}>
-                <p>{formData.name}</p>
-                <p>{formData.phone}</p>
-                <p>{formData.email}</p>
-                <p>{formData.address1}</p>
-                <p>{formData.address2}</p><br/>
-                
+            <div>
+                {<CardPreview />}
             </div>
             <button onClick={htmlToImageConvert}>Download Card</button>
         </div>

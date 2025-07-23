@@ -7,7 +7,7 @@ const Landing = () => {
                 <p>No need to order physical cards anymore!</p>
                 <p>Create a custom contact card and save it for distribution.</p>
                 <Link to="/create">
-                    <button type="button">Start Creating</button><br/>
+                    <button className="create-btn" type="button">Start Creating</button><br/>
                 </Link>
             </main>
         </div>
