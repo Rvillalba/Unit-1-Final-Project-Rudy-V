@@ -12,6 +12,15 @@
   margin: 0;
   padding: 0;
 }
+#nav li {
+  display: block;
+  display: inline;
+  padding: 8px;
+  background-color: #dddddd8f;
+}
+#logo {
+  font-family: Brush Script MT, cursive;
+}
 #create-title {
   margin-top: 500 px;
   color:#000000;
