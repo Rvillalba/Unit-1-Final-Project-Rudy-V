@@ -1,3 +1,22 @@
+body {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  body{
+    font-size: 16px;
+    .sidebar {
+      width: 250px;
+    }
+    }
+}
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+  .sidebar {
+    width: 300px;
+  }
+  }
 #btn {
   width: 100px;
   height: 40px;
@@ -12,10 +31,19 @@
   color: #666;
   cursor: not-allowed;
 }
+#header {
+  justify-content: space-between;
+}
 #nav {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+#nav a:hover {
+  color:rgb(97, 79, 110)
 }
 #nav li {
   display: block;
@@ -40,3 +68,18 @@ background-color: rgba(191, 193, 193, 0.587);
 #about-list li{
   list-style: inside;
 }
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+#form input {
+
+  margin: 10px 0;
+  width: 200px;
+  padding: 10px;
+}
+
+

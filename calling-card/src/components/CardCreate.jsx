@@ -11,7 +11,7 @@ const CardCreate = () => {
         <div>
             <div id="create-form">
                 <h1 id="create-title">Enter Information Below</h1>            
-                    <form>
+                    <form id="form">
                         <input id="name" type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Name" /> <br/>
                         <input id="phone" type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone Number" /> <br/>
                         <input id="email" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="E-Mail" /> <br/>
