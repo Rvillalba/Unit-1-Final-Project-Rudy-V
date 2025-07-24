@@ -1,36 +1,14 @@
 import { useParams } from "react-router-dom";
-import { useState } from "react";
 import CardPreview from "./CardPreview";
 import Button from "./Button";
+import eventHandler from "./eventHandler";
 
 const CardCreate = () => {
     const { create }=useParams();
-    const [formData, setFormData] = useState({
-        name:"",
-        phone:"",
-        email:"",
-        address1:"",
-        address2:"",
-    });
-    const handleChange = (e) => {
-        const { name, value} = e.target;
-        setFormData((prevData) => ({
-            ...prevData,
-            [name]: value,
-        }));
-    };
-    const clearInput = () => {
-        setFormData({
-        name:"",
-        phone:"",
-        email:"",
-        address1:"",
-        address2:"",
-        });
-    };
+    const {formData, handleChange, clearInput} = eventHandler();
     return(       
         <div>
-            <div className="create-form">
+            <div id="create-form">
                 <h1 id="create-title">Enter Information Below</h1>            
                     <form>
                         <input id="name" type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Name" /> <br/>
