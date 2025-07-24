@@ -8,9 +8,9 @@ const About = () => {
             <section id="about">
                 <h1>How Calling Card came into existence</h1>
                     <p>Calling card first crept into my mind when I went to a networking event. When I realized that I had not brought any of my business cards
-                        to the event, I wished there was an app to generate a quick business card so I could give it to anyone that might want my contact information. <br/><br/>
+                        to the event, I wished there was an app to generate a quick business card so I could give it to anyone that might want my contact information.
 
-                        Thus, Calling Card was calling. <br/><br/>
+                        <p id="attn">Thus, Calling Card was calling.</p> 
 
                         While Calling Card was perfect for my situation, it could be perfect for you! Are you:
                     </p>

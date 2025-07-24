@@ -1,5 +1,8 @@
 body {
   font-size: 14px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 @media (min-width: 768px) {
   body{
@@ -63,7 +66,13 @@ a {
   color: #000000;
 }
 #about {
-background-color: rgba(191, 193, 193, 0.587);
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#atn {
+  justify-content: center;
 }
 #about-list li{
   list-style: inside;
@@ -81,5 +90,15 @@ background-color: rgba(191, 193, 193, 0.587);
   width: 200px;
   padding: 10px;
 }
-
-
+main {
+  flex-grow: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+footer {
+  display: flex;
+  margin-top: auto;
+  justify-content: center;
+}
