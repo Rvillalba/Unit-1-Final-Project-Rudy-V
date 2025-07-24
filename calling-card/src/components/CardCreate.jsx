@@ -6,6 +6,7 @@ import eventHandler from "./eventHandler";
 const CardCreate = () => {
     const { create }=useParams();
     const {formData, handleChange, clearInput} = eventHandler();
+    const emptyFields = Object.values(formData).every(value => value.trim() === "");
     return(       
         <div>
             <div id="create-form">
@@ -21,7 +22,7 @@ const CardCreate = () => {
                     
             </div>
             <div>
-                <CardPreview data={formData}/>
+                <CardPreview data={formData} isDisabled={emptyFields}/>
             </div>
         </div>
     )

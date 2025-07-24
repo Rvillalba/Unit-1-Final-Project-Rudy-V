@@ -3,7 +3,7 @@ import { useRef } from "react";
 import Button from './Button';
 import cardBackground from '../images/bg-image.jpg'
 
-const CardPreview = ({ data }) => {
+const CardPreview = ({ data, isDisabled }) => {
     const elementRef = useRef(null);
     const htmlToCanvas = () => {
       if(!elementRef.current) return;
@@ -40,7 +40,7 @@ const CardPreview = ({ data }) => {
             <p>{data.address1}</p>
             <p>{data.address2}</p><br/>
         </div>
-            <Button id="btn" label="Download Card" onClick={htmlToCanvas} />
+            <Button id="btn" label="Download Card" onClick={htmlToCanvas} disabled={isDisabled} />
         </div>
     )
 }
