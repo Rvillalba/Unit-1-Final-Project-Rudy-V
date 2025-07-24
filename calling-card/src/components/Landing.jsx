@@ -7,11 +7,11 @@ const Landing = () => {
                 <h1 >Need a calling card?</h1><br/>
                 <p>No need to order physical cards anymore!</p>
                 <p>Create a custom contact card and save it for distribution.</p>
-            <div>
-              <Link to="/create">
-                    <Button id="btn" label="Start Creating"  />
-                </Link>  
-            </div>
+                    <div>
+                        <Link to="/create">
+                            <Button id="btn" label="Start Creating"  />
+                        </Link>  
+                    </div>
             </main>
         </div>
     );

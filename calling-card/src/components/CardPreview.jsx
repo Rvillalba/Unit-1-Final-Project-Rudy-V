@@ -1,7 +1,6 @@
 import html2canvas from 'html2canvas';
 import { useRef } from "react";
 import Button from './Button';
-import cardBackground from '../images/bg-image.jpg'
 
 const CardPreview = ({ data, isDisabled }) => {
     const elementRef = useRef(null);
@@ -20,19 +19,8 @@ const CardPreview = ({ data, isDisabled }) => {
     return(
       <div>
         <div 
-          className="business-card"
+          id="business-card"
           ref={elementRef}
-          style={{
-            backgroundImage: `url(${cardBackground})`,
-            width: 325,
-            minHeight: 200,
-            backgroundColor: '#fff',
-            color: '#000',
-            padding: 20,
-            fontFamily: 'Arial, Helvetica, sans-serif',
-            textAlign: 'left',
-            margin: '40px auto',
-        }}
         >
             <p>{data.name}</p>
             <p>{data.phone}</p>

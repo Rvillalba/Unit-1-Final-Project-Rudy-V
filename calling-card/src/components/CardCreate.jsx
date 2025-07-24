@@ -17,12 +17,11 @@ const CardCreate = () => {
                         <input id="email" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="E-Mail" /> <br/>
                         <input id="address1" type="text" name="address1" value={formData.address1} onChange={handleChange} placeholder="Address Line 1" /> <br/>
                         <input id="address2" type="text" name="address2" value={formData.address2} onChange={handleChange} placeholder="Address Line 2" /> <br/>
-                    <Button id="btn" label="Clear All Fields" onClick={clearInput} />
+                        <Button id="btn" label="Clear All Fields" onClick={clearInput} />
                     </form>
-                    
+                <CardPreview data={formData} isDisabled={emptyFields}/>  
             </div>
             <div>
-                <CardPreview data={formData} isDisabled={emptyFields}/>
             </div>
         </div>
     )
