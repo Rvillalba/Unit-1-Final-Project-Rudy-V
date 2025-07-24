@@ -1,10 +1,11 @@
 import { useParams } from "react-router-dom";
-
+import peopleWalking from '../images/people-walking.jpg'
 const About = () => {
     const { about }=useParams();
 
     return(
-        <div>
+        <div id="about-container">
+            <img id="people-walking" src={peopleWalking} alt="An above head view of people walking along a crosswalk" />
             <section id="about">
                 <h1>How Calling Card came into existence</h1>
                     <p>Calling card first crept into my mind when I went to a networking event. When I realized that I had not brought any of my business cards

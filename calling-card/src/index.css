@@ -103,11 +103,22 @@ a {
   text-decoration:none;
   color: #000000;
 }
+#people-walking {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.3;
+}
 #about {
   font-size: 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 1;
 }
 #atn {
   margin-left: 740px;
