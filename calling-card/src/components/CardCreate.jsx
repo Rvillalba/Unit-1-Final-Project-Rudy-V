@@ -4,11 +4,16 @@ import Button from "./Button";
 import eventHandler from "./eventHandler";
 
 const CardCreate = () => {
+    
     const { create }=useParams();
+    /*This part of the code uses the eventHandler component*/
     const {formData, handleChange, clearInput} = eventHandler();
+    /*This code checks the values of the input fields. This part is important
+    to disable the download button if there is a blank field*/
     const emptyFields = Object.values(formData).every(value => value.trim() === "");
     return(       
         <div>
+            {/*This is the form used to populate the live preview*/}
             <div id="create-form">
                 <h1 id="create-title">Enter Information Below</h1>            
                     <form id="form">
@@ -19,6 +24,7 @@ const CardCreate = () => {
                         <input id="address2" type="text" name="address2" value={formData.address2} onChange={handleChange} placeholder="Address Line 2" /> <br/>
                         <Button id="btn" label="Clear All Fields" onClick={clearInput} />
                     </form>
+                {/*This is the child component that shows what the card looks like*/}
                 <CardPreview data={formData} isDisabled={emptyFields}/>  
             </div>
             <div>

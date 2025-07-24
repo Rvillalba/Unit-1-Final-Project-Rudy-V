@@ -5,6 +5,7 @@ const About = () => {
 
     return(
         <div id="about-container">
+            {/*Here is an added image with alt text to satisfy requirement*/}
             <img id="people-walking" src={peopleWalking} alt="An above head view of people walking along a crosswalk" />
             <section id="about">
                 <h1>How Calling Card came into existence</h1>
@@ -15,6 +16,7 @@ const About = () => {
 
                         While Calling Card was perfect for my situation, it could be perfect for you! Are you:
                     </p>
+                    {/*This is a list with very brief user stories*/}
                     <ul id="about-list">
                         <li>A college student who would rather avoid paying for 100s of physical business cards</li>
                         <li>A parent wanting a quick and easy way to share contact info with fellow parents in your child's classroom</li>

@@ -8,6 +8,7 @@ const Landing = () => {
                 <p>No need to order physical cards anymore!</p>
                 <p>Create a custom contact card and save it for distribution.</p>
                     <div>
+                        {/*The main part of this page is the get started button that links directly to the create page*/}
                         <Link to="/create">
                             <Button id="btn" label="Start Creating"  />
                         </Link>  
@@ -18,3 +19,5 @@ const Landing = () => {
 }
 
 export default Landing
+
+//

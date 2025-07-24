@@ -8,6 +8,7 @@ const eventHandler = () => {
         address1:"",
         address2:"",
     });
+    /*Handles change in inputs*/
     const handleChange = (e) => {
         const { name, value} = e.target;
         setFormData((prevData) => ({
@@ -15,6 +16,7 @@ const eventHandler = () => {
             [name]: value,
         }));
     };
+    /*Handles the clear input button*/
     const clearInput = () => {
         setFormData({
         name:"",
