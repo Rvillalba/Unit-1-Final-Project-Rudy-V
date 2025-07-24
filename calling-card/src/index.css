@@ -29,3 +29,9 @@ a {
   text-decoration:none;
   color: #000000;
 }
+#about {
+background-color: rgba(191, 193, 193, 0.587);
+}
+#about-list li{
+  list-style: inside;
+}
